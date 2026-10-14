@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { companyLogos } from "./company-logos";
+
+// These two logos are wordmarks: drawn larger so they read at the same weight as the icons.
+const wordmarks = new Set(["Zomato", "Uber"]);
 
 const steps = [
   { n: 1, title: "Find your weak spot", note: "2-min check", href: "/check", tag: "free" },
@@ -23,19 +27,6 @@ const steps = [
     href: "/guides/backend#buy",
     tag: "included",
   },
-];
-
-// Plain wordmarks, not logos: they name the kind of round, not a partnership.
-const companies = [
-  "Flipkart",
-  "Swiggy",
-  "Razorpay",
-  "Zomato",
-  "Amazon",
-  "Google",
-  "Microsoft",
-  "Uber",
-  "Atlassian",
 ];
 
 /** "The jump": from clearing the first question to holding up on the second, in four steps. */
@@ -123,13 +114,21 @@ export function TheJump() {
             <p className="font-head m-0 text-[22px] leading-tight font-bold">
               Product-company rounds that ask the second question.
             </p>
-            <div className="flex flex-wrap gap-1.5">
-              {companies.map((c) => (
+            <div className="grid grid-cols-5 gap-1.5">
+              {companyLogos.map((c) => (
                 <span
-                  key={c}
-                  className="border-ink font-head rounded-md border-[1.5px] px-2 py-0.5 text-[14px] font-bold tracking-tight"
+                  key={c.name}
+                  title={c.name}
+                  className="border-ink bg-paper flex h-11 items-center justify-center rounded-lg border-[1.5px]"
                 >
-                  {c}
+                  <svg
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-label={c.name}
+                    className={wordmarks.has(c.name) ? "fill-ink h-auto w-[80%]" : "fill-ink h-6 w-6"}
+                  >
+                    <path d={c.path} />
+                  </svg>
                 </span>
               ))}
             </div>
@@ -140,8 +139,8 @@ export function TheJump() {
         </div>
 
         <p className="text-faint m-0 font-mono text-[11px]">
-          Company names describe the style of interview round. secondquestion is not affiliated with
-          or endorsed by any of them.
+          Logos show the kind of interview round and belong to their owners. secondquestion is not
+          affiliated with or endorsed by any of them.
         </p>
       </div>
     </section>
