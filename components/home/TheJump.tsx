@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { companyLogos } from "./company-logos";
 
-// These two logos are wordmarks: drawn larger so they read at the same weight as the icons.
-const wordmarks = new Set(["Zomato", "Uber"]);
-
 const steps = [
   { n: 1, title: "Find your weak spot", note: "2-min check", href: "/check", tag: "free" },
   {
@@ -114,28 +111,28 @@ export function TheJump() {
             <p className="font-head m-0 text-[22px] leading-tight font-bold">
               Product-company rounds that ask the second question.
             </p>
-            <div className="grid grid-cols-5 gap-2">
-              {companyLogos.map((c) => (
-                <span
-                  key={c.name}
-                  title={c.name}
-                  className="border-ink flex aspect-square items-center justify-center rounded-xl border-[1.5px] shadow-[2px_2px_0_var(--ink)]"
-                  style={{ background: c.bg }}
-                >
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-4 py-1">
+              {companyLogos.map((c) => {
+                const [, , w, h] = c.viewBox.split(" ").map(Number);
+                const height = c.wordmark ? 18 : 30;
+                return (
                   <svg
-                    viewBox={c.viewBox ?? "0 0 24 24"}
+                    key={c.name}
+                    viewBox={c.viewBox}
+                    width={Math.round((height * w) / h)}
+                    height={height}
                     role="img"
                     aria-label={c.name}
-                    className={wordmarks.has(c.name) ? "h-auto w-[78%]" : "h-[52%] w-[52%]"}
                   >
+                    <title>{c.name}</title>
                     {c.parts ? (
                       c.parts.map((part) => <path key={part.fill} fill={part.fill} d={part.d} />)
                     ) : (
-                      <path fill={c.fg} d={c.path} />
+                      <path fill={c.color} d={c.path} />
                     )}
                   </svg>
-                </span>
-              ))}
+                );
+              })}
             </div>
             <span className="hand text-blue -rotate-1 text-[20px]">
               where “why?” is the real question

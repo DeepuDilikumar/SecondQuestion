@@ -50,6 +50,10 @@ export default async function Home() {
             <h1 className="h-display m-0 text-[clamp(40px,5.4vw,64px)]">
               Answer the <span className="marker">follow-up</span>, not just the question.
             </h1>
+            <p className="font-head text-blue m-0 text-[clamp(21px,2.2vw,26px)] leading-snug font-bold">
+              And crack the backend rounds at top product companies, the ones that always ask
+              “why?”.
+            </p>
             <p className="text-body m-0 max-w-[540px] text-[19px] leading-relaxed">
               You answered fine. Then the interviewer asked “why?”, and it went quiet. This guide
               drills the questions that come next:{" "}
