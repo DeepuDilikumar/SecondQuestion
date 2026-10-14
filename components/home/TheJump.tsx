@@ -125,7 +125,9 @@ export function TheJump() {
                     viewBox="0 0 24 24"
                     role="img"
                     aria-label={c.name}
-                    className={wordmarks.has(c.name) ? "fill-ink h-auto w-[80%]" : "fill-ink h-6 w-6"}
+                    className={
+                      wordmarks.has(c.name) ? "fill-ink h-auto w-[80%]" : "fill-ink h-6 w-6"
+                    }
                   >
                     <path d={c.path} />
                   </svg>
