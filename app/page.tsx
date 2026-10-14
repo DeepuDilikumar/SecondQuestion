@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { BundleCard } from "@/components/product/BundleCard";
 import { Faq } from "@/components/product/Faq";
+import { TheJump } from "@/components/home/TheJump";
 import { FollowUpDemo } from "@/components/product/FollowUpDemo";
 import { HeroVisual } from "@/components/product/HeroVisual";
 import { PriceBlock } from "@/components/product/PriceBlock";
@@ -109,6 +110,8 @@ export default async function Home() {
             </div>
           </section>
         ) : null}
+
+        <TheJump />
 
         <section className="mx-auto flex max-w-[1160px] flex-col gap-9 px-4 py-20 sm:px-6">
           <div className="flex max-w-[760px] flex-col gap-3">
