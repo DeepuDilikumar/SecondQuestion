@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { BundleCard } from "@/components/product/BundleCard";
 import { Faq } from "@/components/product/Faq";
+import { LogoMarquee } from "@/components/home/LogoMarquee";
 import { TheJump } from "@/components/home/TheJump";
 import { FollowUpDemo } from "@/components/product/FollowUpDemo";
 import { HeroVisual } from "@/components/product/HeroVisual";
@@ -43,19 +44,21 @@ export default async function Home() {
       <main id="main">
         <section
           id="hero"
-          className="mx-auto flex max-w-[1160px] flex-wrap items-center gap-14 px-4 pt-12 pb-16 sm:px-6 sm:pt-16"
+          className="mx-auto flex max-w-[1160px] flex-wrap items-center gap-14 px-4 pt-10 pb-10 sm:px-6 sm:pt-12"
         >
           <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
             <span className="label">// for engineers switching jobs · 2–8 yrs experience</span>
-            <h1 className="h-display m-0 text-[clamp(44px,6vw,72px)]">
-              Crack <span className="marker">big tech</span> interviews.
+            <h1 className="h-display m-0 text-[clamp(40px,4.6vw,60px)]">
+              <span className="whitespace-nowrap">
+                Crack <span className="marker">big tech</span>.
+              </span>{" "}
+              <span className="whitespace-nowrap">Win the follow-up.</span>
             </h1>
-            <p className="font-head text-ink-2 m-0 text-[clamp(22px,2.4vw,28px)] leading-snug font-bold">
-              Answer the follow-up, not just the question. Top product companies always ask “why?”.
+            <p className="font-head text-ink-2 m-0 text-[clamp(20px,2vw,24px)] leading-snug font-bold">
+              Big tech decides on the second question, not the first. Be ready when they ask “why?”.
             </p>
-            <p className="text-body m-0 max-w-[540px] text-[19px] leading-relaxed">
-              You answered fine. Then the interviewer asked “why?”, and it went quiet. This guide
-              drills the questions that come next:{" "}
+            <p className="text-body m-0 max-w-[540px] text-[18px] leading-relaxed">
+              This guide drills the questions that come next:{" "}
               {hasContent
                 ? `${facts.questions} backend questions, each with ${facts.followUpRange} follow-ups,`
                 : "backend questions, each with its follow-ups,"}{" "}
@@ -95,6 +98,8 @@ export default async function Home() {
             />
           ) : null}
         </section>
+
+        <LogoMarquee />
 
         {hasContent ? (
           <section className="border-chip bg-card/75 border-y-[1.5px] border-dashed">

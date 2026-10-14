@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CompanyLogoMark } from "./CompanyLogo";
 import { companyLogos } from "./company-logos";
 
 const steps = [
@@ -112,27 +113,9 @@ export function TheJump() {
               Product-company rounds that ask the second question.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-4 py-1">
-              {companyLogos.map((c) => {
-                const [, , w, h] = c.viewBox.split(" ").map(Number);
-                const height = c.wordmark ? 18 : 30;
-                return (
-                  <svg
-                    key={c.name}
-                    viewBox={c.viewBox}
-                    width={Math.round((height * w) / h)}
-                    height={height}
-                    role="img"
-                    aria-label={c.name}
-                  >
-                    <title>{c.name}</title>
-                    {c.parts ? (
-                      c.parts.map((part) => <path key={part.fill} fill={part.fill} d={part.d} />)
-                    ) : (
-                      <path fill={c.color} d={c.path} />
-                    )}
-                  </svg>
-                );
-              })}
+              {companyLogos.map((c) => (
+                <CompanyLogoMark key={c.name} logo={c} height={c.wordmark ? 18 : 30} />
+              ))}
             </div>
             <span className="hand text-blue -rotate-1 text-[20px]">
               where “why?” is the real question
