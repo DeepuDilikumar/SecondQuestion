@@ -114,22 +114,25 @@ export function TheJump() {
             <p className="font-head m-0 text-[22px] leading-tight font-bold">
               Product-company rounds that ask the second question.
             </p>
-            <div className="grid grid-cols-5 gap-1.5">
+            <div className="grid grid-cols-5 gap-2">
               {companyLogos.map((c) => (
                 <span
                   key={c.name}
                   title={c.name}
-                  className="border-ink bg-paper flex h-11 items-center justify-center rounded-lg border-[1.5px]"
+                  className="border-ink flex aspect-square items-center justify-center rounded-xl border-[1.5px] shadow-[2px_2px_0_var(--ink)]"
+                  style={{ background: c.bg }}
                 >
                   <svg
-                    viewBox="0 0 24 24"
+                    viewBox={c.viewBox ?? "0 0 24 24"}
                     role="img"
                     aria-label={c.name}
-                    className={
-                      wordmarks.has(c.name) ? "fill-ink h-auto w-[80%]" : "fill-ink h-6 w-6"
-                    }
+                    className={wordmarks.has(c.name) ? "h-auto w-[78%]" : "h-[52%] w-[52%]"}
                   >
-                    <path d={c.path} />
+                    {c.parts ? (
+                      c.parts.map((part) => <path key={part.fill} fill={part.fill} d={part.d} />)
+                    ) : (
+                      <path fill={c.fg} d={c.path} />
+                    )}
                   </svg>
                 </span>
               ))}
