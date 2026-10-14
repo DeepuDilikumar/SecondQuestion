@@ -111,7 +111,7 @@ export function TheJump() {
             <p className="font-head m-0 text-[22px] leading-tight font-bold">
               Product-company rounds that ask the second question.
             </p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-4 py-1">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-4 py-1">
               {companyLogos.map((c) => {
                 const [, , w, h] = c.viewBox.split(" ").map(Number);
                 const height = c.wordmark ? 18 : 30;

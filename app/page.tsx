@@ -47,12 +47,11 @@ export default async function Home() {
         >
           <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
             <span className="label">// for engineers switching jobs · 2–8 yrs experience</span>
-            <h1 className="h-display m-0 text-[clamp(40px,5.4vw,64px)]">
-              Answer the <span className="marker">follow-up</span>, not just the question.
+            <h1 className="h-display m-0 text-[clamp(44px,6vw,72px)]">
+              Crack <span className="marker">big tech</span> interviews.
             </h1>
-            <p className="font-head text-blue m-0 text-[clamp(21px,2.2vw,26px)] leading-snug font-bold">
-              And crack the backend rounds at top product companies, the ones that always ask
-              “why?”.
+            <p className="font-head text-ink-2 m-0 text-[clamp(22px,2.4vw,28px)] leading-snug font-bold">
+              Answer the follow-up, not just the question. Top product companies always ask “why?”.
             </p>
             <p className="text-body m-0 max-w-[540px] text-[19px] leading-relaxed">
               You answered fine. Then the interviewer asked “why?”, and it went quiet. This guide
